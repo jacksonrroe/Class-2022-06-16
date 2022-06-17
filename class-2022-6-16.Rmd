@@ -1,0 +1,27 @@
+---
+title: "Class-2022-6-16"
+author: "Jackson Roe"
+date: '2022-06-17'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(primer.data)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, warning=FALSE}
+
+ggplot(data=nhanes, 
+       mapping = aes(x=height))+
+       geom_histogram(bins=30,
+                      color = "black",
+                      fill = "red")+
+       labs(title="Height of People (cm)",
+            x="Height(cm)",
+            y="Quantity of people",
+            caption="Data collected from the National Health and Nutrition Examination Survey")+
+       facet_wrap(~gender)
+```
